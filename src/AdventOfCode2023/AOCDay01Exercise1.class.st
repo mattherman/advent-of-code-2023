@@ -24,8 +24,10 @@ AOCDay01Exercise1 >> initialize [
 
 { #category : #'as yet unclassified' }
 AOCDay01Exercise1 >> solve [
-	| calibrationValues |
-	calibrationValues := calibrationLines
-		collect: [ :line | ((line indexOf: (line findFirst: #isDigit)) , (line indexOf: (line findLast: #isDigit))) asNumber ] .
+	| calibrationValues digitList |
+	digitList := calibrationLines
+		collect: [ :line | line select: #isDigit ] .
+	calibrationValues := digitList
+		collect: [ :line | ((line first asString) , (line last asString)) asNumber ] .
 	^ calibrationValues sum
 ]
