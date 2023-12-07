@@ -7,11 +7,10 @@ Class {
 	#category : #AdventOfCode2023
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #commands }
 AOCDay01Exercise1 >> solve [
-
 	| nonEmptyLines digitList calibrationValues |
-	nonEmptyLines := calibrationLines reject: [ :line | line isEmptyOrNil ].
+	nonEmptyLines := self inputLines reject: [ :line | line isEmptyOrNil ].
 	digitList := nonEmptyLines collect: [ :line | line select: #isDigit ].
 	calibrationValues := digitList collect: [ :line |
 		                     (line first asString , line last asString)

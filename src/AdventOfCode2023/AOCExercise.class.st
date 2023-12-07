@@ -10,6 +10,17 @@ Class {
 	#category : #AdventOfCode2023
 }
 
+{ #category : #'class initialization' }
+AOCExercise class >> withInput: anArrayOfLines [
+	^ self new inputLines: anArrayOfLines
+]
+
+{ #category : #accessing }
+AOCExercise >> inputLines [
+	^ inputLines
+	
+]
+
 { #category : #accessing }
 AOCExercise >> inputLines: anArrayOfLines [
 	inputLines := anArrayOfLines
