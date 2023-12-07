@@ -12,7 +12,7 @@ Class {
 
 { #category : #'class initialization' }
 AOCExercise class >> withInput: anArrayOfLines [
-	^ self new inputLines: anArrayOfLines
+	^ self new inputLines: (anArrayOfLines reject: [ :line | line isEmptyOrNil ])
 ]
 
 { #category : #accessing }

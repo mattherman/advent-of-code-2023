@@ -9,9 +9,8 @@ Class {
 
 { #category : #commands }
 AOCDay01Exercise1 >> solve [
-	| nonEmptyLines digitList calibrationValues |
-	nonEmptyLines := self inputLines reject: [ :line | line isEmptyOrNil ].
-	digitList := nonEmptyLines collect: [ :line | line select: #isDigit ].
+	| digitList calibrationValues |
+	digitList := inputLines collect: [ :line | line select: #isDigit ].
 	calibrationValues := digitList collect: [ :line |
 		                     (line first asString , line last asString)
 			                     asNumber ].
