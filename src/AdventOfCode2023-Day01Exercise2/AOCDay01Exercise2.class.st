@@ -4,7 +4,7 @@ Advent of Code 2023 - Day 1 Exercise 2 solution
 Class {
 	#name : #AOCDay01Exercise2,
 	#superclass : #AOCExercise,
-	#category : #'AdventOfCode2023-Exercise01Day2'
+	#category : #'AdventOfCode2023-Day01Exercise2'
 }
 
 { #category : #commands }

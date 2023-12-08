@@ -1,7 +1,7 @@
 Class {
 	#name : #AOCDay01Exercise1Test,
 	#superclass : #TestCase,
-	#category : #'AdventOfCode2023-Exercise01Day1'
+	#category : #'AdventOfCode2023-Day01Exercise1'
 }
 
 { #category : #tests }

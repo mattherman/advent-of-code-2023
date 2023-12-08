@@ -1,7 +1,7 @@
 Class {
 	#name : #IntegerNamesTest,
 	#superclass : #TestCase,
-	#category : #'AdventOfCode2023-Exercise01Day2'
+	#category : #'AdventOfCode2023-Day01Exercise2'
 }
 
 { #category : #tests }
