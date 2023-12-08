@@ -38,11 +38,17 @@ IntegerNames class >> replace: aString [
 		nextOccurrence
 			ifNil: [ index := 0 ]
 			ifNotNil: [ 
+				| matchedValue newValue |
 				index := nextOccurrence startIndex.
+				matchedValue := nextOccurrence matchedValue.
+				"This is for a dumb edge case - a value like 'sevenine' is supposed to result in '79'
+				 not '7ine'. The workaround maintains the first and last character in order to get this to
+				 work properly. For example, `sevenine` will end up with `s7nn9e`."
+				newValue := (matchedValue first asString) , (NameMap at: matchedValue) , (matchedValue last asString).
 				result := result
 					copyReplaceFrom: nextOccurrence startIndex
 					to: (nextOccurrence endIndex) - 1
-					with: (NameMap at: (nextOccurrence matchedValue)) ] 
+					with: newValue ] 
 	].
 
 	^ result

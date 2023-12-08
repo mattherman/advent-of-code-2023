@@ -24,5 +24,5 @@ AOCDay01Exercise2Test >> testPuzzleInput [
 	| input exercise |
 	input := (FileLocator home / 'Development/aoc/2023/inputs/01.txt') contents lines.
 	exercise := AOCDay01Exercise2 withInput: input.
-	self assert: exercise solve equals: 0
+	self assert: exercise solve equals: 54100
 ]
