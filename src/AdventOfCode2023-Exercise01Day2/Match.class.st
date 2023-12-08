@@ -12,6 +12,14 @@ Class {
 	#category : #'AdventOfCode2023-Exercise01Day2'
 }
 
+{ #category : #'class initialization' }
+Match class >> value: aMatchedString in: aSourceString at: anInteger [
+	^ self new
+		matchedValue: aMatchedString;
+		sourceString: aSourceString;
+		startIndex: anInteger
+]
+
 { #category : #accessing }
 Match >> endIndex [
 	^ startIndex + matchedValue size
