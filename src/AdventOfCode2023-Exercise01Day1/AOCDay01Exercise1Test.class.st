@@ -15,3 +15,11 @@ AOCDay01Exercise1Test >> testExampleInput [
 	} .
 	self assert: exercise solve equals: 142
 ]
+
+{ #category : #tests }
+AOCDay01Exercise1Test >> testPuzzleInput [
+	| input exercise |
+	input := (FileLocator home / 'Development/aoc/2023/inputs/01.txt') contents lines.
+	exercise := AOCDay01Exercise1 withInput: input.
+	self assert: exercise solve equals: 54877
+]
