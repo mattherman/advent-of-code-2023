@@ -16,7 +16,7 @@ type Game = {
 
 let parseGamePrefix (str: string) =
     match str.Split([|' '|]) with
-    | [|"Game"; id|] -> int id
+    | [| "Game"; id |] -> int id
     | _ -> failwith $"Unexpected game prefix format: {str}"
 
 let parseCubes (str: string) =
@@ -45,7 +45,7 @@ let isRoundPossible (availableCubes: Map<Cube, int>) (round: Round) =
     round.Cubes
     |> Array.forall (fun (count, color) ->
         let possibleNumberOfCubes = Map.find color availableCubes
-        count < possibleNumberOfCubes)
+        count <= possibleNumberOfCubes)
 
 let isGamePossible (availableCubes: Map<Cube, int>) (game: Game) =
     game.Rounds |> Array.forall (isRoundPossible availableCubes)
